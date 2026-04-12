@@ -1,0 +1,37 @@
+.local/
+.worktree/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.pytest_cache/
+.venv/
+.python-version
+venv/
+env/
+
+# Test, type-check, and tool caches
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+
+# Packaging artifacts
+dist/
+build/
+site/
+.eggs/
+*.egg
+*.egg-info/
+pip-wheel-metadata/
+
+# IDE and OS files
+.DS_Store
+.idea/
+.vscode/
