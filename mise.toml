@@ -1,0 +1,23 @@
+[tools]
+python = "3.12"
+uv = "latest"
+
+[tasks.init]
+description = "作業用ディレクトリを初期化"
+run = "mkdir -p ./.local/input ./.local/output"
+
+[tasks.migrate]
+description = "はてなブログのMTエクスポートをEmDash向けMarkdownへ変換"
+run = "uv run --python 3.12 python -m hatena_to_emdash.cli migrate"
+
+[tasks."migrate:dry-run"]
+description = "書き込みや画像取得を行わずに変換結果を確認"
+run = "uv run --python 3.12 python -m hatena_to_emdash.cli migrate --dry-run"
+
+[tasks."migrate:sample"]
+description = "サンプルMTファイルでdry-runを実行"
+run = "uv run --python 3.12 python -m hatena_to_emdash.cli migrate --dry-run --input tests/fixtures/sample.mt --output-dir ./.local/sample-out"
+
+[tasks.test]
+description = "unittestを実行"
+run = "uv run --python 3.12 python -m unittest discover -s tests -p 'test_*.py'"
